@@ -1,5 +1,19 @@
 .Stopwatch {
+  position: relative;
   display: flex;
+  align-items: center;
   justify-content: center;
+  height: 25vh;
   background: #ffffff;
-  font-size: 2em; }
+  font-family: -apple-system, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-size: 4em; }
+  @media (min-width: 768px) {
+    .Stopwatch {
+      height: 50%; } }
+  .Stopwatch div {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-end; }
+  .Stopwatch__lap {
+    display: block;
+    font-size: .25em; }
