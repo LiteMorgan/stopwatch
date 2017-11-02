@@ -15,6 +15,18 @@ body {
     position: relative;
     display: flex;
     flex-flow: column wrap;
+
+    @media (min-width: 768px) {
+      flex-flow: row nowrap;
+    }
+  }
+
+  &__panel {
+    flex: 1 0 100%;
+
+    @media (min-width: 768px) {
+      flex: 1 0 50%;
+    }
   }
 }
 

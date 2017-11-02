@@ -9,6 +9,14 @@ body {
     position: relative;
     display: flex;
     flex-flow: column wrap; }
+    @media (min-width: 768px) {
+      .App__content {
+        flex-flow: row nowrap; } }
+  .App__panel {
+    flex: 1 0 100%; }
+    @media (min-width: 768px) {
+      .App__panel {
+        flex: 1 0 50%; } }
 
 .App {
   text-align: center; }
