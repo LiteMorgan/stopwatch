@@ -1,0 +1,8 @@
+@import 'style/_variables.scss';
+
+.Stopwatch {
+  display: flex;
+  justify-content: center;
+  background: $color-bg-light;
+  font-size: 2em;
+}

@@ -1,0 +1,8 @@
+.Controls {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  border-top: 2px solid;
+  border-color: #f4f6f8;
+  box-sizing: border-box; }

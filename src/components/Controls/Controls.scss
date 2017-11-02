@@ -1,0 +1,11 @@
+@import 'style/_variables.scss';
+
+.Controls {
+  position: relative;
+  display:         flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  border-top:   2px solid;
+  border-color: $color-border;
+  box-sizing:   border-box;
+}
