@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TimeFormatter        from 'minutes-seconds-milliseconds';
 import Controls             from './components/Controls';
 import Stopwatch            from './components/Stopwatch';
-import logo from './logo.svg';
+
 import './App.css';
 
 
@@ -98,7 +98,6 @@ class App extends Component {
     return (
       <div className="App">
         <main className="App__content">
-          {/* All Components housed here */}
           <div className="App__panel">
             <Stopwatch mainTimer={TimeFormatter(this.state.elapsedMainTime)}
                        lapTimer={TimeFormatter(this.state.elapsedLapTime)}
@@ -112,13 +111,6 @@ class App extends Component {
           <div className="App__panel">
           </div>
         </main>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to my terrible attempt at a Stopwatch</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
