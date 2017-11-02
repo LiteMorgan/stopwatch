@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Controls             from './components/Controls';
+import Stopwatch            from './components/Stopwatch';
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,6 +20,12 @@ class App extends Component {
       <div className="App">
         <main className="App__content">
           {/* All Components housed here */}
+          <div className="App__panel">
+            <Stopwatch />
+            <Controls />
+          </div>
+          <div className="App__panel">
+          </div>
         </main>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
