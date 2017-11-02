@@ -6,9 +6,9 @@ export default class Stopwatch extends Component {
   /**
    * @function constructor
    */
-  constructor(props) {
-    super(props);
-  };
+  // constructor(props) {
+  //   super(props);
+  // };
 
   /**
    * @function render
@@ -17,7 +17,14 @@ export default class Stopwatch extends Component {
 
     return(
       <div className="Stopwatch">
-        <p>Stopwatch goes here</p>
+        <div>
+          <div className="Stopwatch__main">
+            {this.props.mainTimer}
+          </div>
+          <div className="Stopwatch__lap">
+            {this.props.lapTimer}
+          </div>
+        </div>
       </div>
     )
   }
