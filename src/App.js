@@ -11,12 +11,13 @@ class App extends Component {
     super();
 
     this.state = {
-      startMainTime:     null,
-      startLapTime:      null,
-      elapsedMainTime:   null,
-      elapsedLapTime:    null,
-      isRunning:         false,
-      lapTimes:          [],
+      startMainTime:   null,
+      startLapTime:    null,
+      elapsedMainTime: null,
+      elapsedLapTime:  null,
+      resumeLapTime:   null,
+      isRunning:       false,
+      lapTimes:        [],
     }
 
     this.interval = null;
@@ -24,28 +25,29 @@ class App extends Component {
 
 
   timerStart = () => {
-    let {isRunning, elapsedMainTime, elapsedLapTime, lapTimes} = this.state;
+    let {isRunning, elapsedMainTime, elapsedLapTime} = this.state;
 
     if (isRunning) {
       clearInterval(this.interval);
       this.setState({
         isRunning:  false,
-        lapTimes:   lapTimes.concat(elapsedLapTime),
+        resumeLapTime: elapsedLapTime,
       });
       return;
     }
 
     this.setState({
-      isRunning:      true,
-      startMainTime:  new Date(),
-      startLapTime:   new Date(),
+      isRunning:       true,
+      startMainTime:   new Date(),
+      startLapTime:    new Date(),
     },() => {
       this.interval = setInterval(() => {
 
         this.setState({
           elapsedMainTime:  new Date() - this.state.startMainTime + elapsedMainTime,
-          elapsedLapTime:   new Date() - this.state.startLapTime,
-        })
+          elapsedLapTime:   new Date() - this.state.startLapTime + this.state.resumeLapTime,
+        });
+
       });
     });
   };
@@ -56,7 +58,7 @@ class App extends Component {
 
     this.setState({
       startLapTime:   new Date(),
-      elapsedLapTime: 0,
+      resumeLapTime:  null,
       lapTimes:       lapTimes.concat(elapsedLapTime),
     });
   };
@@ -68,6 +70,7 @@ class App extends Component {
       startLapTime:     null,
       elapsedMainTime:  0,
       elapsedLapTime:   0,
+      resumeLapTime:    null,
     });
   };
 
