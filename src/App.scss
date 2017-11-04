@@ -1,8 +1,13 @@
 @import 'style/_variables.scss';
+@import 'style/_flex.scss';
 
 
 body {
   background: $color-bg-dark;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 
@@ -20,28 +25,51 @@ body {
     display: flex;
     flex-flow: column wrap;
     min-height: 100%;
-
-    @media (min-width: 512px) {
-      flex-flow: row nowrap;
-    }
   }
 
-  &__panel {
+  &__controls {
     position: relative;
-    flex: 1 0 100%;
-    overflow: hidden;
+    display:         flex;
+    flex:            1;
+    align-items:     flex-start;
+    justify-content: space-evenly;
+    max-width:  768px;
+    padding: 20px;
+  }
+}
 
-    &--left {
-      flex: 0 1 auto;
+
+.panel {
+  position: relative;
+  display:         flex;
+  flex:            0 1 auto;
+  justify-content: center;
+  overflow: hidden;
+
+  &--timer { background: $color-bg; }
+  &--controls { background: $color-bg-light; }
+
+  &--laps {
+    flex: 1 0 auto;
+    background: $color-bg-dark;
+  }
+
+  &__inner {
+    display: flex;
+    flex:    1;
+    width:     100%;
+    color: $color-text;
+
+    &--static {
+      position: relative;
+      max-width: 768px;
+      padding: 20px;
     }
 
-    &--right {
-      flex: 2 1 auto;
-    }
-
-    @media (min-width: 512px) {
-      flex: 1 0 50%;
-      overflow: hidden;
+    &--scrolling {
+      position: absolute;
+      height: 100%;
+      overflow: scroll;
     }
   }
 }

@@ -1,5 +1,35 @@
+.f--column {
+  flex-direction: column; }
+
+.f--column-reverse {
+  flex-direction: column-reverse; }
+
+.f--row {
+  flex-direction: row; }
+
+.f--align-items-start {
+  align-items: flex-start; }
+
+.f--align-items-center {
+  align-items: center; }
+
+.f--align-items-end {
+  align-items: flex-end; }
+
+.f--justify-evenly {
+  justify-content: space-evenly; }
+
+.f--justify-center {
+  justify-content: center; }
+
+.f--justify-space-between {
+  justify-content: space-between; }
+
 body {
-  background: #f4f6f8; }
+  background: #1f1f20; }
+
+* {
+  box-sizing: border-box; }
 
 .App {
   position: static;
@@ -13,18 +43,38 @@ body {
     display: flex;
     flex-flow: column wrap;
     min-height: 100%; }
-    @media (min-width: 512px) {
-      .App__content {
-        flex-flow: row nowrap; } }
-  .App__panel {
+  .App__controls {
     position: relative;
-    flex: 1 0 100%;
-    overflow: hidden; }
-    .App__panel--left {
-      flex: 0 1 auto; }
-    .App__panel--right {
-      flex: 2 1 auto; }
-    @media (min-width: 512px) {
-      .App__panel {
-        flex: 1 0 50%;
-        overflow: hidden; } }
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    max-width: 768px;
+    padding: 20px; }
+
+.panel {
+  position: relative;
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: center;
+  overflow: hidden; }
+  .panel--timer {
+    background: #2b2b2d; }
+  .panel--controls {
+    background: #444447; }
+  .panel--laps {
+    flex: 1 0 auto;
+    background: #1f1f20; }
+  .panel__inner {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    color: #ffffff; }
+    .panel__inner--static {
+      position: relative;
+      max-width: 768px;
+      padding: 20px; }
+    .panel__inner--scrolling {
+      position: absolute;
+      height: 100%;
+      overflow: scroll; }
