@@ -1,14 +1,14 @@
 @import 'style/_variables.scss';
 
-.Stopwatch {
-
-  &__clocks {
-    display: flex;
-    flex-flow:   column wrap;
-    align-items: flex-end;
-  }
+.TimeDisplay {
+  display: flex;
+  padding: 40px 0;
+  font-family: $font-family-mono;
+  font-size:   4em;
+  font-weight: 500;
 
   &__main {
+    font-size: 1em;
   }
 
   &__lap {

@@ -1,0 +1,17 @@
+.TimeDisplay {
+  display: flex;
+  padding: 40px 0;
+  font-family: "Roboto Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-size: 4em;
+  font-weight: 500; }
+  .TimeDisplay__main {
+    font-size: 1em; }
+  .TimeDisplay__lap {
+    display: block;
+    flex-flow: row nowrap;
+    font-size: .25em; }
+    .TimeDisplay__lap span {
+      font-family: sans-serif;
+      font-size: .8em;
+      color: #ffffff;
+      opacity: .5; }
