@@ -2,18 +2,9 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #f4f6f8;
+  color: #ffffff;
   overflow: scroll;
-  border-top: 2px solid;
-  border-left: 0;
-  border-color: #eaeef2;
   box-sizing: border-box; }
-  @media (min-width: 512px) {
-    .Laps {
-      height: 100vh;
-      border-top: 0;
-      border-left: 2px solid;
-      border-color: #eaeef2; } }
   .Laps ol {
     display: flex;
     flex-flow: column-reverse wrap;
@@ -25,9 +16,9 @@
       justify-content: space-between;
       margin-bottom: 12px;
       padding-bottom: 12px;
-      border-bottom: 1px solid #eaeef2; }
+      border-bottom: 1px solid #37373a; }
       .Laps ol li:last-child {
         padding-top: 12px;
-        border-top: 1px solid #eaeef2; }
+        border-top: 1px solid #37373a; }
   .Laps__number {
     opacity: .5; }
