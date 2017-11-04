@@ -1,12 +1,76 @@
-$alabaster:       #fafbfc;
-$start:           #69f0ae;
-$stop:            #ff5252;
+//
+// Variables
+// ---------------------------------
 
-$white:           #ffffff;
-$black:           #2b2b2d;
+//== Colors
+//
 
-$color-bg:        $alabaster;
-$color-bg-light:  $white;
-$color-bg-dark:   darken($color-bg, 2%);
-$color-border:    darken($color-bg, 5%);
+$alabaster:         #fafbfc;
+$start:             #69f0ae;
+$stop:              #ff5252;
 
+$white:             #ffffff;
+$black:             #2b2b36;
+
+
+//== Scaffolding
+//
+
+$color-bg:          $black;
+$color-bg-light:    lighten($color-bg, 12%);
+$color-bg-dark:     darken($color-bg, 8%);
+$color-bg-black:    #000000;
+$color-border:      lighten($color-bg, 5%);
+
+$color-text:        $white;
+
+
+//== Typography
+//
+
+$font-family-sans:  Rubik, sans-serif;
+$font-family-mono:  "Roboto Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+
+$font-size-set:     16px;
+
+$font-size-base:    1em;
+$font-size-small:   ($font-size-base * 0.875);
+$font-size-large:   ($font-size-base * 4);
+
+
+//== Components
+//
+
+$spacing-base:      (1rem * 1.25);          // 20px
+$spacing-small:     ($spacing-base * 0.6);  // 12px
+$spacing-large:     ($spacing-base * 1.5);  // 30px
+
+$border-radius-base:    4px;
+$border-radius-large:   ($border-radius-base * 2);
+$border-radius-small:   ($border-radius-base / 2);
+
+
+
+//== Buttons
+//
+
+$btn-font-weight:   500;
+$btn-letter-space:  1px;
+
+$btn-default-color: $color-bg-light;
+$btn-default-bg:    $color-bg-dark;
+
+
+//== Media Query Breakpoints
+//
+
+$screen-xs:       0;
+$screen-sm:       576px;
+$screen-md:       768px;
+$screen-lg:       992px;
+$screen-xl:       1200px;
+
+$screen-xs-max:   ($screen-sm - 1);
+$screen-sm-max:   ($screen-md - 1);
+$screen-md-max:   ($screen-lg - 1);
+$screen-lg-max:   ($screen-xl - 1);
