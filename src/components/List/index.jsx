@@ -1,10 +1,10 @@
 import React                from 'react'
 import TimeFormatter        from 'minutes-seconds-milliseconds'
 
-import './Laps.css'
+import './List.css'
 
 
-function Laps({data}) {
+function List({data}) {
   return (
     <ol className="List">
       {data.map((lap, key) => {
@@ -23,4 +23,4 @@ function Laps({data}) {
 }
 
 
-export default Laps
+export default List
