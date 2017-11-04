@@ -94,7 +94,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <main className="App__content">
+        <main className="App__content f--column">
 
           <div className="panel panel--timer">
             <div className="panel__inner panel__inner--static f--justify-center">
