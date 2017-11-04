@@ -1,45 +1,30 @@
 body {
-  background: #fafbfc; }
+  background: #f4f6f8; }
 
 .App {
   position: static;
-  min-height: 100vh;
+  height: calc(100vh - 70px);
   width: 100%; }
+  @media (min-width: 512px) {
+    .App {
+      height: 100vh; } }
   .App__content {
     position: relative;
     display: flex;
     flex-flow: column wrap;
-    min-height: 100vh; }
-    @media (min-width: 768px) {
+    min-height: 100%; }
+    @media (min-width: 512px) {
       .App__content {
         flex-flow: row nowrap; } }
   .App__panel {
-    flex: 1 0 100%; }
-    @media (min-width: 768px) {
+    position: relative;
+    flex: 1 0 100%;
+    overflow: hidden; }
+    .App__panel--left {
+      flex: 0 1 auto; }
+    .App__panel--right {
+      flex: 2 1 auto; }
+    @media (min-width: 512px) {
       .App__panel {
-        flex: 1 0 50%; } }
-
-.App {
-  text-align: center; }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px; }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white; }
-
-.App-title {
-  font-size: 1.5em; }
-
-.App-intro {
-  font-size: large; }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
+        flex: 1 0 50%;
+        overflow: hidden; } }

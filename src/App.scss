@@ -2,61 +2,46 @@
 
 
 body {
-  background: $color-bg;
+  background: $color-bg-dark;
 }
 
 
 .App {
   position: static;
-  min-height: 100vh;
+  height: calc(100vh - 70px);
   width:      100%;
+
+  @media (min-width: 512px) {
+    height: 100vh;
+  }
 
   &__content {
     position: relative;
     display: flex;
     flex-flow: column wrap;
-    min-height: 100vh;
+    min-height: 100%;
 
-    @media (min-width: 768px) {
+    @media (min-width: 512px) {
       flex-flow: row nowrap;
     }
   }
 
   &__panel {
+    position: relative;
     flex: 1 0 100%;
+    overflow: hidden;
 
-    @media (min-width: 768px) {
+    &--left {
+      flex: 0 1 auto;
+    }
+
+    &--right {
+      flex: 2 1 auto;
+    }
+
+    @media (min-width: 512px) {
       flex: 1 0 50%;
+      overflow: hidden;
     }
   }
-}
-
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
