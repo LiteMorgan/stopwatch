@@ -1,25 +1,18 @@
-import React, { Component } from 'react';
-//import classNames           from 'classnames';
-import './Button.css';
+import React, { Component } from 'react'
+import './Button.css'
 
 
 export default class Button extends Component {
-
-  handleClick = event => {
-    this.props.clickEvent(event);
-  }
-
 
   /**
    * @function render
    */
   render() {
-
     return(
-      <button className={'Button' + (this.props.classes ? ' ' + this.props.classes : '')}
-              value={this.props.value}
-              disabled={this.props.disabled}
-              onClick={this.handleClick}
+      <button 
+        className={'Button' + (this.props.classes ? ' ' + this.props.classes : '')}
+        onClick={this.props.handleClick}
+        disabled={this.props.disabled}
       >
         {this.props.label || 'button'}
       </button>
