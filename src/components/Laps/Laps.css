@@ -1,0 +1,33 @@
+.Laps {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #f4f6f8;
+  overflow: scroll;
+  border-top: 2px solid;
+  border-left: 0;
+  border-color: #eaeef2;
+  box-sizing: border-box; }
+  @media (min-width: 512px) {
+    .Laps {
+      height: 100vh;
+      border-top: 0;
+      border-left: 2px solid;
+      border-color: #eaeef2; } }
+  .Laps ol {
+    display: flex;
+    flex-flow: column-reverse wrap;
+    margin: 0;
+    padding: 40px;
+    list-style: none; }
+    .Laps ol li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eaeef2; }
+      .Laps ol li:last-child {
+        padding-top: 12px;
+        border-top: 1px solid #eaeef2; }
+  .Laps__number {
+    opacity: .5; }
