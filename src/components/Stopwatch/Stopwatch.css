@@ -5,15 +5,22 @@
   justify-content: center;
   height: 25vh;
   background: #ffffff;
-  font-family: -apple-system, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-  font-size: 4em; }
-  @media (min-width: 768px) {
+  font-family: "Roboto Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-size: 4em;
+  font-weight: 500; }
+  @media (min-width: 512px) {
     .Stopwatch {
       height: 50%; } }
-  .Stopwatch div {
+  .Stopwatch__clocks {
     display: flex;
     flex-flow: column wrap;
     align-items: flex-end; }
   .Stopwatch__lap {
     display: block;
+    flex-flow: row nowrap;
     font-size: .25em; }
+    .Stopwatch__lap span {
+      font-family: sans-serif;
+      font-size: .8em;
+      color: #2b2b2d;
+      opacity: .5; }

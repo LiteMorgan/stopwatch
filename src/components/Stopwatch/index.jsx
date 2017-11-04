@@ -17,12 +17,12 @@ export default class Stopwatch extends Component {
 
     return(
       <div className="Stopwatch">
-        <div>
+        <div className="Stopwatch__clocks">
           <div className="Stopwatch__main">
             {this.props.mainTimer}
           </div>
           <div className="Stopwatch__lap">
-            {this.props.lapTimer}
+            <span className="Stopwatch__prelap">Lap time:</span> {this.props.lapTimer}
           </div>
         </div>
       </div>
