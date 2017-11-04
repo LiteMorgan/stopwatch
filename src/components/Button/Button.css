@@ -1,0 +1,37 @@
+.Button {
+  position: relative;
+  display: inline-block;
+  padding: 15px 25px;
+  background: skyblue;
+  color: #2b2b2d;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
+  will-change: opacity, background;
+  transition: opacity .2s ease-out, background .2s ease-out; }
+  .Button[disabled] {
+    opacity: .5;
+    cursor: auto; }
+  .Button:active {
+    top: 2px; }
+  @media (min-width: 768px) {
+    .Button {
+      padding: 20px 30px;
+      font-size: 1.125em; } }
+  .Button--startstop {
+    width: 50%;
+    text-transform: uppercase; }
+  .Button--reset {
+    width: 35%; }
+  .Button--start {
+    background: #69f0ae; }
+  .Button--stop {
+    background: #ff5252; }
