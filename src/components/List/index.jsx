@@ -6,7 +6,7 @@ import './List.css'
 
 function List({data}) {
   return (
-    <ol className="List">
+    <ol className="List f--column-reverse">
       {data.map((lap, key) => {
         return (
           <li 
