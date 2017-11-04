@@ -1,8 +1,12 @@
 $alabaster:       #fafbfc;
+$start:           #69f0ae;
+$stop:            #ff5252;
 
 $white:           #ffffff;
 $black:           #2b2b2d;
 
 $color-bg:        $alabaster;
 $color-bg-light:  $white;
-$color-border:    darken($color-bg, 2%);
+$color-bg-dark:   darken($color-bg, 2%);
+$color-border:    darken($color-bg, 5%);
+
