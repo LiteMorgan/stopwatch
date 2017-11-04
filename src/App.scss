@@ -2,48 +2,46 @@
 @import 'style/_flex.scss';
 
 
-body {
-  background: $color-bg-dark;
-}
+* { box-sizing: border-box; }
 
-* {
-  box-sizing: border-box;
+
+body {
+  position: relative;
+  display: block;
+  background: $color-bg-black;
+  font-family: $font-family-sans;
+  font-size:   $font-size-set;
 }
 
 
 .App {
   position: static;
-  height: calc(100vh - 70px);
-  width:      100%;
+  height: calc(100vh - 120px);
+  width:  100%;
+  margin-top: 2px;
+  border-radius: $border-radius-large;
+  overflow: hidden;
 
-  @media (min-width: 512px) {
-    height: 100vh;
+
+  @media (min-width: $screen-md) {
+    margin-top: 0;
+    border-radius: 0;
   }
 
   &__content {
     position: relative;
     display: flex;
-    flex-flow: column wrap;
     min-height: 100%;
-  }
-
-  &__controls {
-    position: relative;
-    display:         flex;
-    flex:            1;
-    align-items:     flex-start;
-    justify-content: space-evenly;
-    max-width:  768px;
-    padding: 20px;
+    padding-bottom: $spacing-base;
+    background-color: $color-bg-dark;
   }
 }
 
 
 .panel {
   position: relative;
-  display:         flex;
-  flex:            0 1 auto;
-  justify-content: center;
+  display: flex;
+  flex:    0 1 auto;
   overflow: hidden;
 
   &--timer { background: $color-bg; }
@@ -57,13 +55,14 @@ body {
   &__inner {
     display: flex;
     flex:    1;
-    width:     100%;
+    width: 100%;
     color: $color-text;
 
     &--static {
       position: relative;
-      max-width: 768px;
-      padding: 20px;
+      max-width: $screen-md;
+      margin: 0 auto;
+      padding: $spacing-base;
     }
 
     &--scrolling {

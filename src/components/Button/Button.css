@@ -1,11 +1,12 @@
 .Button {
   position: relative;
   display: inline-block;
-  padding: 15px 25px;
-  background: #444447;
-  color: #1f1f20;
+  padding: 1.25rem;
+  background: #19191f;
+  color: #464658;
+  font-family: Rubik, sans-serif;
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 1px;
   line-height: 1;
   text-align: center;
@@ -14,18 +15,17 @@
   outline: none;
   cursor: pointer;
   user-select: none;
-  box-sizing: border-box;
   will-change: opacity, background;
   transition: opacity .2s ease-out, background .2s ease-out; }
+  @media (min-width: 768px) {
+    .Button {
+      padding: 1.25rem 1.875rem;
+      font-size: 1.125em; } }
   .Button[disabled] {
     opacity: .5;
     cursor: auto; }
   .Button:active {
     top: 2px; }
-  @media (min-width: 768px) {
-    .Button {
-      padding: 20px 30px;
-      font-size: 1.125em; } }
   .Button--startstop {
     width: 50%;
     text-transform: uppercase; }

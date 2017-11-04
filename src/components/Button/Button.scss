@@ -4,23 +4,28 @@
 .Button {
   position: relative;
   display: inline-block;
-  padding: 15px 25px;
-  background: $color-bg-light;
-  color: $color-bg-dark;
-  font-size:   1em;
-  font-weight: 400;
-  letter-spacing: 1px;
-  line-height: 1;
-  text-align: center;
-  border: none;
-  border-radius: 8px;
+  padding: $spacing-base;
+  background:     $btn-default-bg;
+  color:          $btn-default-color;
+  font-family:    $font-family-sans;
+  font-size:      1em;
+  font-weight:    $btn-font-weight;
+  letter-spacing: $btn-letter-space;
+  line-height:    1;
+  text-align:     center;
+  border:        none;
+  border-radius: $border-radius-large;
   outline: none;
   cursor: pointer;
   user-select: none;
-  box-sizing: border-box;
   will-change: opacity, background;
   transition:  opacity .2s ease-out,
                background .2s ease-out;
+
+  @media (min-width: $screen-md) {
+    padding: $spacing-base $spacing-large;
+    font-size: 1.125em;
+  }
 
   &[disabled] {
     opacity: .5;
@@ -31,16 +36,14 @@
     top: 2px;
   }
 
-  @media (min-width: 768px) {
-    padding: 20px 30px;
-    font-size: 1.125em;
-  }
-
   &--startstop {
     width: 50%;
     text-transform: uppercase;
   }
-  &--reset     { width: 35%; }
+
+  &--reset { 
+    width: 35%;
+  }
 
   &--start { background: $start; }
   &--stop {  background: $stop; }

@@ -1,17 +1,19 @@
 .TimeDisplay {
   display: flex;
-  padding: 40px 0;
+  padding: 1.25rem 0;
   font-family: "Roboto Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-  font-size: 4em;
   font-weight: 500; }
+  @media (min-width: 768px) {
+    .TimeDisplay {
+      padding: 1.875rem 0; } }
   .TimeDisplay__main {
-    font-size: 1em; }
+    font-size: 4em; }
   .TimeDisplay__lap {
     display: block;
     flex-flow: row nowrap;
-    font-size: .25em; }
-    .TimeDisplay__lap span {
-      font-family: sans-serif;
-      font-size: .8em;
-      color: #ffffff;
-      opacity: .5; }
+    font-size: 1em; }
+  .TimeDisplay__prelap {
+    color: #ffffff;
+    font-family: Rubik, sans-serif;
+    font-size: 0.875em;
+    opacity: .5; }

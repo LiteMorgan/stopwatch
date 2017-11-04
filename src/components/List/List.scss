@@ -3,26 +3,28 @@
 
 .List {
   display: flex;
-  flex-flow: column-reverse wrap;
   width: 100%;
-  max-width: 768px;
+  max-width: $screen-md;
   margin:  0;
-  padding: 40px;
+  padding: $spacing-large;
   list-style: none;
 
   li {
     display: flex;
-    margin-bottom:  12px;
-    padding-bottom: 12px;
+    padding-top:    $spacing-small;
+    padding-bottom: $spacing-small;
     border-bottom: 1px solid $color-border;
+    font-family: $font-family-mono;
+    line-height: 1;
+    opacity: .8;
 
     &:last-child {
-      padding-top: 12px;
       border-top: 1px solid $color-border;
     }
   }
 
   &__number {
+    font-family: $font-family-sans;
     opacity: .5;
   }
 }

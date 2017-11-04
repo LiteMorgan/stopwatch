@@ -25,46 +25,46 @@
 .f--justify-space-between {
   justify-content: space-between; }
 
-body {
-  background: #1f1f20; }
-
 * {
   box-sizing: border-box; }
 
+body {
+  position: relative;
+  display: block;
+  background: #000000;
+  font-family: Rubik, sans-serif;
+  font-size: 16px; }
+
 .App {
   position: static;
-  height: calc(100vh - 70px);
-  width: 100%; }
-  @media (min-width: 512px) {
+  height: calc(100vh - 120px);
+  width: 100%;
+  margin-top: 2px;
+  border-radius: 8px;
+  overflow: hidden; }
+  @media (min-width: 768px) {
     .App {
-      height: 100vh; } }
+      margin-top: 0;
+      border-radius: 0; } }
   .App__content {
     position: relative;
     display: flex;
-    flex-flow: column wrap;
-    min-height: 100%; }
-  .App__controls {
-    position: relative;
-    display: flex;
-    flex: 1;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    max-width: 768px;
-    padding: 20px; }
+    min-height: 100%;
+    padding-bottom: 1.25rem;
+    background-color: #19191f; }
 
 .panel {
   position: relative;
   display: flex;
   flex: 0 1 auto;
-  justify-content: center;
   overflow: hidden; }
   .panel--timer {
-    background: #2b2b2d; }
+    background: #2b2b36; }
   .panel--controls {
-    background: #444447; }
+    background: #464658; }
   .panel--laps {
     flex: 1 0 auto;
-    background: #1f1f20; }
+    background: #19191f; }
   .panel__inner {
     display: flex;
     flex: 1;
@@ -73,7 +73,8 @@ body {
     .panel__inner--static {
       position: relative;
       max-width: 768px;
-      padding: 20px; }
+      margin: 0 auto;
+      padding: 1.25rem; }
     .panel__inner--scrolling {
       position: absolute;
       height: 100%;

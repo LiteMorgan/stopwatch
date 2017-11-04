@@ -2,25 +2,28 @@
 
 .TimeDisplay {
   display: flex;
-  padding: 40px 0;
+  padding: $spacing-base 0;
   font-family: $font-family-mono;
-  font-size:   4em;
   font-weight: 500;
 
+  @media (min-width: $screen-md) {
+    padding: $spacing-large 0;
+  }
+
   &__main {
-    font-size: 1em;
+    font-size: $font-size-large;
   }
 
   &__lap {
     display: block;
     flex-flow: row nowrap;
-    font-size: .25em;
+    font-size: $font-size-base;
+  }
 
-    & span {
-      font-family: sans-serif;
-      font-size: .8em;
-      color: $color-text;
+  &__prelap {
+      color:       $color-text;
+      font-family: $font-family-sans;
+      font-size:   $font-size-small;
       opacity: .5;
-    }
   }
 }

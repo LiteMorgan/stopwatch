@@ -1,18 +1,20 @@
 .List {
   display: flex;
-  flex-flow: column-reverse wrap;
   width: 100%;
   max-width: 768px;
   margin: 0;
-  padding: 40px;
+  padding: 1.875rem;
   list-style: none; }
   .List li {
     display: flex;
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #37373a; }
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #363644;
+    font-family: "Roboto Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    line-height: 1;
+    opacity: .8; }
     .List li:last-child {
-      padding-top: 12px;
-      border-top: 1px solid #37373a; }
+      border-top: 1px solid #363644; }
   .List__number {
+    font-family: Rubik, sans-serif;
     opacity: .5; }
