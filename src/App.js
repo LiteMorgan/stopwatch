@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import TimeFormatter        from 'minutes-seconds-milliseconds';
-import Controls             from './components/Controls';
-import Laps                 from './components/Laps';
-import Stopwatch            from './components/Stopwatch';
+import React, { Component } from 'react'
+import classNames           from 'classnames'
+import TimeFormatter        from 'minutes-seconds-milliseconds'
+import Button               from './components/Button'
+import List                 from './components/List'
+import TimeDisplay          from './components/TimeDisplay'
 
-import './App.css';
+import './App.css'
 
 
 class App extends Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
       startMainTime:   null,
@@ -21,21 +22,21 @@ class App extends Component {
       lapTimes:        [],
     }
 
-    this.interval = null;
+    this.interval = null
   }
 
 
-  timerStart = () => {
-    let {isRunning, elapsedMainTime, elapsedLapTime} = this.state;
+  timerStartStop = () => {
+    let {isRunning, elapsedMainTime, elapsedLapTime} = this.state
 
     // if Timer is running, stop
     if (isRunning) {
-      clearInterval(this.interval);
+      clearInterval(this.interval)
       this.setState({
         isRunning:  false,
         resumeLapTime: elapsedLapTime,
-      });
-      return;
+      })
+      return
     }
 
     // run the Timer
@@ -49,22 +50,22 @@ class App extends Component {
         this.setState({
           elapsedMainTime:  new Date() - this.state.startMainTime + elapsedMainTime,
           elapsedLapTime:   new Date() - this.state.startLapTime + this.state.resumeLapTime,
-        });
+        })
 
-      });
-    });
-  };
+      })
+    })
+  }
 
 
   timerLap = () => {
-    let {elapsedLapTime} = this.state;
+    let {elapsedLapTime} = this.state
 
     this.setState({
       startLapTime:   new Date(),
       resumeLapTime:  null,
       lapTimes:       this.state.lapTimes.concat(elapsedLapTime),
-    });
-  };
+    })
+  }
 
 
   timerReset = () => {
@@ -75,50 +76,61 @@ class App extends Component {
       elapsedLapTime:   0,
       resumeLapTime:    null,
       lapTimes:         [],
-    });
-  };
-
-
-  handleControls = (eventValue, runningBoolean, resetBoolean) => {
-    switch(eventValue) {
-      case 'start':
-        this.timerStart();
-        break;
-      case 'lap':
-        this.timerLap();
-        break;
-      case 'reset':
-        this.timerReset();
-        break;
-      default:
-        console.log('This should not be firing!');
-        break;
-    };
-  };
+    })
+  }
 
 
   render() {
 
+    let startStopLabel  = this.state.isRunning ? 'Stop' : 'Start'
+    let lapResetLabel   = this.state.isRunning ? 'Lap' : 'Reset'
+    let lapResetClick   = this.state.isRunning ? this.timerLap : this.timerReset
+
+    const startStopClasses = classNames('Button--startstop', {
+      'Button--start': !this.state.isRunning,
+      'Button--stop':  this.state.isRunning,
+    })
+
+
     return (
       <div className="App">
         <main className="App__content">
-          <div className="App__panel App__panel--left">
-            <Stopwatch mainTimer={TimeFormatter(this.state.elapsedMainTime)}
-                       lapTimer={TimeFormatter(this.state.elapsedLapTime)}
-            />
 
-            <Controls stateRunning={this.state.isRunning}
-                      timerProgress={this.state.startMainTime}
-                      callback={this.handleControls} 
-            />
+          <div className="panel panel--timer">
+            <div className="panel__inner panel__inner--static f--justify-center">
+              <TimeDisplay 
+                mainTimer={TimeFormatter(this.state.elapsedMainTime)}
+                lapTimer={TimeFormatter(this.state.elapsedLapTime)}
+              />
+            </div>
           </div>
-          <div className="App__panel App__panel--right">
-            <Laps data={this.state.lapTimes} />
+
+          <div className="panel panel--controls">
+            <div className="panel__inner panel__inner--static f--align-items-start f--justify-evenly">
+              <Button 
+                label={startStopLabel}
+                classes={startStopClasses}
+                handleClick={this.timerStartStop}
+              />
+              <Button 
+                label={lapResetLabel}
+                classes="Button--reset"
+                handleClick={lapResetClick}
+                disabled={!this.state.startMainTime && !this.state.isRunning}
+              />
+            </div>
+          </div>
+
+          <div className="panel panel--laps">
+            <div className="panel__inner panel__inner--scrolling f--align-items-start f--justify-center">
+              <List data={this.state.lapTimes} />
+            </div>
           </div>
         </main>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+
+export default App
