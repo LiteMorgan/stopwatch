@@ -1,32 +1,24 @@
 @import 'style/_variables.scss';
 
 
-.Laps {
-  position: absolute;
-  height: 100%;
-  width:  100%;
-  color: $color-text;
-  overflow: scroll;
-  box-sizing: border-box;
+.List {
+  display: flex;
+  flex-flow: column-reverse wrap;
+  width: 100%;
+  max-width: 768px;
+  margin:  0;
+  padding: 40px;
+  list-style: none;
 
-  ol {
+  li {
     display: flex;
-    flex-flow: column-reverse wrap;
-    margin:  0;
-    padding: 40px;
-    list-style: none;
+    margin-bottom:  12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $color-border;
 
-    li {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom:  12px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid $color-border;
-
-      &:last-child {
-        padding-top: 12px;
-        border-top: 1px solid $color-border;
-      }
+    &:last-child {
+      padding-top: 12px;
+      border-top: 1px solid $color-border;
     }
   }
 

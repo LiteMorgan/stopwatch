@@ -1,24 +1,18 @@
-.Laps {
-  position: absolute;
-  height: 100%;
+.List {
+  display: flex;
+  flex-flow: column-reverse wrap;
   width: 100%;
-  color: #ffffff;
-  overflow: scroll;
-  box-sizing: border-box; }
-  .Laps ol {
+  max-width: 768px;
+  margin: 0;
+  padding: 40px;
+  list-style: none; }
+  .List li {
     display: flex;
-    flex-flow: column-reverse wrap;
-    margin: 0;
-    padding: 40px;
-    list-style: none; }
-    .Laps ol li {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 12px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #37373a; }
-      .Laps ol li:last-child {
-        padding-top: 12px;
-        border-top: 1px solid #37373a; }
-  .Laps__number {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #37373a; }
+    .List li:last-child {
+      padding-top: 12px;
+      border-top: 1px solid #37373a; }
+  .List__number {
     opacity: .5; }
