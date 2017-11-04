@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TimeFormatter        from 'minutes-seconds-milliseconds';
 import Controls             from './components/Controls';
+import Laps                 from './components/Laps';
 import Stopwatch            from './components/Stopwatch';
 
 import './App.css';
@@ -27,6 +28,7 @@ class App extends Component {
   timerStart = () => {
     let {isRunning, elapsedMainTime, elapsedLapTime} = this.state;
 
+    // if Timer is running, stop
     if (isRunning) {
       clearInterval(this.interval);
       this.setState({
@@ -36,6 +38,7 @@ class App extends Component {
       return;
     }
 
+    // run the Timer
     this.setState({
       isRunning:       true,
       startMainTime:   new Date(),
@@ -54,12 +57,12 @@ class App extends Component {
 
 
   timerLap = () => {
-    let {lapTimes, elapsedLapTime} = this.state;
+    let {elapsedLapTime} = this.state;
 
     this.setState({
       startLapTime:   new Date(),
       resumeLapTime:  null,
-      lapTimes:       lapTimes.concat(elapsedLapTime),
+      lapTimes:       this.state.lapTimes.concat(elapsedLapTime),
     });
   };
 
@@ -71,6 +74,7 @@ class App extends Component {
       elapsedMainTime:  0,
       elapsedLapTime:   0,
       resumeLapTime:    null,
+      lapTimes:         [],
     });
   };
 
@@ -98,7 +102,7 @@ class App extends Component {
     return (
       <div className="App">
         <main className="App__content">
-          <div className="App__panel">
+          <div className="App__panel App__panel--left">
             <Stopwatch mainTimer={TimeFormatter(this.state.elapsedMainTime)}
                        lapTimer={TimeFormatter(this.state.elapsedLapTime)}
             />
@@ -108,7 +112,8 @@ class App extends Component {
                       callback={this.handleControls} 
             />
           </div>
-          <div className="App__panel">
+          <div className="App__panel App__panel--right">
+            <Laps data={this.state.lapTimes} />
           </div>
         </main>
       </div>
