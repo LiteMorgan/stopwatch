@@ -41,13 +41,15 @@ $font-size-large:   ($font-size-base * 4);
 //== Components
 //
 
-$spacing-base:      (1rem * 1.25);          // 20px
-$spacing-small:     ($spacing-base * 0.6);  // 12px
-$spacing-large:     ($spacing-base * 1.5);  // 30px
+$spacing-base:          (1rem * 1.25);          // 20px
+$spacing-small:         ($spacing-base * 0.6);  // 12px
+$spacing-large:         ($spacing-base * 1.5);  // 30px
 
 $border-radius-base:    4px;
 $border-radius-large:   ($border-radius-base * 2);
 $border-radius-small:   ($border-radius-base / 2);
+
+$footer-height:         60px;
 
 
 
@@ -57,9 +59,10 @@ $border-radius-small:   ($border-radius-base / 2);
 $btn-font-weight:   500;
 $btn-letter-space:  1px;
 
-$btn-default-color: $color-bg-light;
+$btn-default-color: darken($white, 35%);
 $btn-default-bg:    $color-bg-dark;
 
+$btn-alt-color:     $color-bg-light;
 
 //== Media Query Breakpoints
 //
