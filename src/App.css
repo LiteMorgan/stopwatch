@@ -35,23 +35,36 @@ body {
   font-family: Rubik, sans-serif;
   font-size: 16px; }
 
+a {
+  color: currentColor;
+  transition: color .2s ease-in-out; }
+  a:hover {
+    color: #69f0ae; }
+  a img {
+    text-decoration: none; }
+
 .App {
   position: static;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 70px);
   width: 100%;
   margin-top: 2px;
-  border-radius: 8px;
-  overflow: hidden; }
+  overflow: hidden;
+  border-radius: 8px 8px 0 0; }
   @media (min-width: 768px) {
     .App {
+      height: 100vh;
       margin-top: 0;
       border-radius: 0; } }
   .App__content {
     position: relative;
     display: flex;
-    min-height: 100%;
+    height: calc(100vh - 60px - 70px);
     padding-bottom: 1.25rem;
-    background-color: #19191f; }
+    background-color: #19191f;
+    border-radius: 0 0 8px 8px; }
+    @media (min-width: 768px) {
+      .App__content {
+        height: calc(100vh - 60px); } }
 
 .panel {
   position: relative;
@@ -79,3 +92,19 @@ body {
       position: absolute;
       height: 100%;
       overflow: scroll; }
+
+.footer {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  color: #ffffff; }
+  .footer__github {
+    display: block;
+    width: 32px; }
+    .footer__github img {
+      display: block;
+      height: auto;
+      width: 100%; }

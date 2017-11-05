@@ -13,17 +13,30 @@ body {
   font-size:   $font-size-set;
 }
 
+a {
+  color: currentColor;
+  transition: color .2s ease-in-out;
+
+  &:hover {
+    color: $start;
+  }
+
+  img {
+    text-decoration: none;
+  }
+}
+
 
 .App {
   position: static;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 70px);
   width:  100%;
   margin-top: 2px;
-  border-radius: $border-radius-large;
   overflow: hidden;
-
+  border-radius: $border-radius-large $border-radius-large 0 0;
 
   @media (min-width: $screen-md) {
+    height: 100vh;
     margin-top: 0;
     border-radius: 0;
   }
@@ -31,9 +44,14 @@ body {
   &__content {
     position: relative;
     display: flex;
-    min-height: 100%;
+    height: calc(100vh - #{$footer-height} - 70px);
     padding-bottom: $spacing-base;
     background-color: $color-bg-dark;
+    border-radius: 0 0 $border-radius-large $border-radius-large;
+
+    @media (min-width: $screen-md) {
+      height: calc(100vh - #{$footer-height});
+    }
   }
 }
 
@@ -69,6 +87,28 @@ body {
       position: absolute;
       height: 100%;
       overflow: scroll;
+    }
+  }
+}
+
+
+.footer {
+  display: flex;
+  height:    $footer-height;
+  width:     100%;
+  max-width: $screen-md;
+  margin:  0 auto;
+  padding: $spacing-base;
+  color: $white;
+
+  &__github {
+    display: block;
+    width: 32px;
+
+    img {
+      display: block;
+      height: auto;
+      width:  100%;
     }
   }
 }
