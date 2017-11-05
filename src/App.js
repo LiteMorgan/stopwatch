@@ -6,6 +6,7 @@ import List                 from './components/List'
 import TimeDisplay          from './components/TimeDisplay'
 
 import './App.css'
+import GitHub from './github.svg'
 
 
 class App extends Component {
@@ -127,6 +128,22 @@ class App extends Component {
             </div>
           </div>
         </main>
+
+        <footer className="footer f--align-items-center f--justify-space-between">
+          <span>Built with ♥ by <a href="http//getignited.co.uk">getignited</a>.</span>
+          <span>
+            <a
+              href="https://github.com/getignited/stopwatch"
+              className="footer__github"
+              title="View on GitHub"
+            >
+              <img
+                src={GitHub}
+                alt="View on GitHub"
+              />
+            </a>
+          </span>
+        </footer>
       </div>
     )
   }
