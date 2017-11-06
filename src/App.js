@@ -10,6 +10,9 @@ import GitHub from './github.svg'
 
 
 class App extends Component {
+  /**
+   * @function constructor
+   */
   constructor() {
     super()
 
@@ -26,7 +29,10 @@ class App extends Component {
     this.interval = null
   }
 
-
+  /**
+   * @function timerStartStop
+   * - Start/Stop the Timer
+   */
   timerStartStop = () => {
     let {isRunning, elapsedMainTime, elapsedLapTime} = this.state
 
@@ -53,11 +59,15 @@ class App extends Component {
           elapsedLapTime:   new Date() - this.state.startLapTime + this.state.resumeLapTime,
         })
 
-      })
+      }, 1)
     })
   }
 
 
+  /**
+   * @function timerLap
+   * - Logs the currently elapsed time for display
+   */
   timerLap = () => {
     let {elapsedLapTime} = this.state
 
@@ -69,6 +79,10 @@ class App extends Component {
   }
 
 
+  /**
+   * @function timerReset
+   * - Resets all states back to default, empty settings
+   */
   timerReset = () => {
     this.setState({
       startMainTime:    null,
@@ -81,8 +95,10 @@ class App extends Component {
   }
 
 
+  /**
+   * @function render
+   */
   render() {
-
     let startStopLabel  = this.state.isRunning ? 'Stop' : 'Start'
     let lapResetLabel   = this.state.isRunning ? 'Lap' : 'Reset'
     let lapResetClick   = this.state.isRunning ? this.timerLap : this.timerReset
