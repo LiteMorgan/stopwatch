@@ -7,7 +7,7 @@
     .TimeDisplay {
       padding: 1.875rem 0; } }
   .TimeDisplay__main {
-    font-size: 4em; }
+    font-size: 3em; }
   .TimeDisplay__lap {
     display: block;
     flex-flow: row nowrap;

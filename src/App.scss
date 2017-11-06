@@ -13,6 +13,7 @@ body {
   font-size:   $font-size-set;
 }
 
+
 a {
   color: currentColor;
   transition: color .2s ease-in-out;
@@ -29,10 +30,9 @@ a {
 
 .App {
   position: static;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
   width:  100%;
   margin-top: 2px;
-  overflow: hidden;
   border-radius: $border-radius-large $border-radius-large 0 0;
 
   @media (min-width: $screen-md) {
@@ -44,13 +44,13 @@ a {
   &__content {
     position: relative;
     display: flex;
-    height: calc(100vh - #{$footer-height} - 70px);
     padding-bottom: $spacing-base;
     background-color: $color-bg-dark;
     border-radius: 0 0 $border-radius-large $border-radius-large;
 
     @media (min-width: $screen-md) {
-      height: calc(100vh - #{$footer-height});
+      height:     calc(100vh - #{$footer-height});
+      min-height: 800px;
     }
   }
 }
@@ -67,7 +67,13 @@ a {
 
   &--laps {
     flex: 1 0 auto;
+    min-height: 250px;
     background: $color-bg-dark;
+
+    @media (min-width: $screen-md) {
+      height:     50vh;
+      min-height: 400px;
+    }
   }
 
   &__inner {
@@ -84,9 +90,13 @@ a {
     }
 
     &--scrolling {
-      position: absolute;
-      height: 100%;
-      overflow: scroll;
+      position: relative;
+
+      @media (min-width: $screen-md) {
+        position: absolute;
+        height: 100%;
+        overflow-y: scroll;
+      }
     }
   }
 }
