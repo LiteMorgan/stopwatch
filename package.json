@@ -1,9 +1,11 @@
 {
   "name": "stopwatch",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://getignited.github.io/stopwatch",
   "dependencies": {
     "classnames": "^2.2.5",
+    "gh-pages": "^1.0.0",
     "minutes-seconds-milliseconds": "^1.0.3",
     "npm-run-all": "^4.1.1"
   },
