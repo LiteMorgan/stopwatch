@@ -10,7 +10,7 @@ function List({data}) {
       {data.map((lap, key) => {
         return (
           <li 
-            key={lap}
+            key={lap + '+' + key}
             className="f--justify-space-between"
           >
             <span className="List__number">Lap {key + 1}</span>
